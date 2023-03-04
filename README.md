@@ -55,6 +55,9 @@ poetry install
 # Migrate database
 poetry run ./manage.py migrate
 
+# Start tailwind server
+poetry run ./manage.py tailwind watch
+
 # Start dev server
 poetry run ./manage.py runserver
 ```
