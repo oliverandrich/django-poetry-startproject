@@ -62,7 +62,7 @@ omit = [
 ]
 
 [tool.ruff]
-select = ["E", "F", "UP", "B"]
+select = ["E", "F", "UP", "B", "C4", "INP", "YTT", "TID"]
 ignore = []
 
 # Allow autofix for all enabled rules (when `--fix`) is provided.
@@ -75,22 +75,19 @@ exclude = [
     ".direnv",
     ".eggs",
     ".git",
+    ".github",
     ".hg",
-    ".mypy_cache",
-    ".nox",
-    ".pants.d",
-    ".pytype",
     ".ruff_cache",
     ".svn",
     ".tox",
     ".venv",
     "__pypackages__",
     "_build",
-    "buck-out",
     "build",
     "dist",
+    "migrations",
     "node_modules",
-    "venv",
+    "static",
 ]
 
 # Same as Black.
