@@ -46,8 +46,8 @@ django-admin startproject \
 
 # Setup environment
 cd example_project
-echo "DJANGO_DEBUG=True >> .env"
-echo "SECRET_KEY=notsosecret >> .env"
+echo "DJANGO_DEBUG=True" >> .env
+echo "SECRET_KEY=notsosecret" >> .env
 
 # Install dependencies
 poetry install
