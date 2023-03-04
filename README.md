@@ -39,10 +39,24 @@ It has no Postgres support included out of the box, because I am currently enjoy
 ## Install
 
 ```shell
-$ django-admin startproject \
+django-admin startproject \
     --extension=ini,py,toml,yaml,yml \
     --template=https://github.com/oliverandrich/django-poetry-startproject/archive/main.zip \
     example_project
+
+# Setup environment
+cd example_project
+echo "DJANGO_DEBUG=True >> .env"
+echo "SECRET_KEY=notsosecret >> .env"
+
+# Install dependencies
+poetry install
+
+# Migrate database
+poetry run ./manage.py migrate
+
+# Start dev server
+poetry run ./manage.py runserver
 ```
 
 ### Add Postgres support
