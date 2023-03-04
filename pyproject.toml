@@ -1,0 +1,107 @@
+[tool.poetry]
+name = "{{project_name}}"
+version = "0.1.0"
+description = ""
+authors = ["Oliver Andrich <oliver@andrich.me>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+django = "^4.1"
+django-click = "^2.3.0"
+django-environ = "^0.10.0"
+django-health-check = "^3.17.0"
+django-htmx = "^1.13.0"
+django-ninja = "^0.21.0"
+django-tailwind-cli = "^1.1.0"
+psutil = "^5.9.4"
+python = "^3.11"
+pytz = "^2022.7.1"
+whitenoise = "^6.3.0"
+
+[tool.poetry.group.dev.dependencies]
+django-browser-reload = "^1.7.0"
+django-test-plus = "^2.2.1"
+django-types = "^0.17.0"
+ipdb = "^0.13.11"
+model-bakery = "^1.9.0"
+pre-commit = "^3.1.1"
+pytest = "^7.2.0"
+pytest-cov = "^4.0.0"
+pytest-django = "^4.5.2"
+pytest-randomly = "^3.12.0"
+pytest-timeout = "^2.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+target-version = ["py311"]
+line-length = 100
+
+[tool.isort]
+profile = "black"
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+
+[tool.pytest.ini_options]
+addopts = "--cov --nomigrations --reuse-db"
+DJANGO_SETTINGS_MODULE = "config.settings"
+norecursedirs = ".git* assets templates"
+python_files = "tests.py test_*.py"
+
+[tool.coverage.run]
+omit = [
+    "*/admin.py",
+    "*/manage.py",
+    "*/migrations/*",
+    "*/tests/*",
+    "conftest.py",
+]
+
+[tool.ruff]
+select = ["E", "F", "UP", "B"]
+ignore = []
+
+# Allow autofix for all enabled rules (when `--fix`) is provided.
+fixable = ["A", "B", "C", "D", "E", "F"]
+unfixable = []
+
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+]
+
+# Same as Black.
+line-length = 100
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+# Assume Python 3.10.
+target-version = "py311"
+
+[tool.ruff.mccabe]
+# Unlike Flake8, default to a complexity level of 10.
+max-complexity = 10
