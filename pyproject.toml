@@ -63,11 +63,11 @@ omit = [
 ]
 
 [tool.ruff]
-select = ["E", "F", "UP", "B", "C4", "INP", "YTT", "TID", "DJ"]
+select = ["A", "B", "C4", "E", "F", "I", "DJ", "INP", "TID", "UP", "YTT"]
 ignore = []
 
 # Allow autofix for all enabled rules (when `--fix`) is provided.
-fixable = ["A", "B", "C", "D", "E", "F"]
+fixable = ["A", "B", "C4", "E", "F", "I", "TID"]
 unfixable = []
 
 # Exclude a variety of commonly ignored directories.
