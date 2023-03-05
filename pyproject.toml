@@ -63,7 +63,7 @@ select = ["A", "B", "C4", "E", "F", "I", "DJ", "INP", "TID", "UP", "YTT"]
 ignore = []
 
 # Allow autofix for all enabled rules (when `--fix`) is provided.
-fixable = ["A", "B", "C4", "E", "F", "I", "TID"]
+fixable = ["A", "B", "C4", "E", "F", "I", "TID", "UP"]
 unfixable = []
 
 # Exclude a variety of commonly ignored directories.
