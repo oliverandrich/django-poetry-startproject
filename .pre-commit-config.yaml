@@ -37,6 +37,12 @@ repos:
     hooks:
       - id: pyright
 
+  - repo: https://github.com/adamchainz/django-upgrade
+    rev: 1.13.0
+    hooks:
+      - id: django-upgrade
+        args: [--target-version, "4.1"]
+
   - repo: https://github.com/rtts/djhtml
     rev: 3.0.2
     hooks:
