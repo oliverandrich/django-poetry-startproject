@@ -21,7 +21,6 @@ It has no Postgres support included out of the box, because I am currently enjoy
 - SQLite setup with WAL mode enabled
 - Local install of htmx
 - Local install of Alpine.js
-- Stub implementation of a [custom user](https://testdriven.io/blog/django-custom-user-model/).
 
 ### CI
 
