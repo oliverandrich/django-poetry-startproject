@@ -1,6 +1,9 @@
 # We don't include the compiled styles into the repo!
 theme/static
 
+# Ignore ruff sache
+.ruff_cache
+
 # Created by https://www.toptal.com/developers/gitignore/api/django,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=django,visualstudiocode
 

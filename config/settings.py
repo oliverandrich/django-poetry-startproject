@@ -18,7 +18,15 @@ from django.utils.translation import gettext_lazy as _
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Read environment variables from the environment and a .env file.
-env = environ.Env()
+env = environ.Env(
+    DJANGO_DEBUG=(bool, False),
+    ALLOWED_HOSTS=(list, []),
+    CSRF_TRUSTED_ORIGINS=(list, []),
+    DATABASE_URL=(str, "sqlite:///db.sqlite3?timeout=20"),
+    EMAIL_URL=(str, "consolemail://"),
+    CACHE_URL=(str, "locmemcache://"),
+    ADMIN_URL=(str, "admin/"),
+)
 environ.Env.read_env(BASE_DIR / ".env")
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -27,15 +35,15 @@ SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # https://docs.djangoproject.com/en/4.1/ref/settings/#debug
-DEBUG = env.bool("DJANGO_DEBUG", default=False)
+DEBUG = env.bool("DJANGO_DEBUG")
 
 # A list of strings representing the host/domain names that this Django site can serve.
 # https://docs.djangoproject.com/en/4.1/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=[])
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
 
 # A list of trusted origins for unsafe requests (e.g. POST).
 # https://docs.djangoproject.com/en/4.1/ref/settings/#csrf-trusted-origins
-CSRF_TRUSTED_ORIGINS = env.list("CSRF_TRUSTED_ORIGINS", default=[])
+CSRF_TRUSTED_ORIGINS = env.list("CSRF_TRUSTED_ORIGINS")
 
 # Application definition
 # https://docs.djangoproject.com/en/4.1/ref/settings/#installed-apps
@@ -119,9 +127,7 @@ WSGI_APPLICATION = "config.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-DATABASES = {
-    "default": env.db_url("DATABASE_URL", default="sqlite:///db.sqlite3?timeout=20"),
-}
+DATABASES = {"default": env.db_url("DATABASE_URL")}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -170,12 +176,12 @@ MEDIA_ROOT = BASE_DIR / "media"
 # Email backend
 # https://docs.djangoproject.com/en/4.1/ref/settings/#email-backend
 # https://docs.djangoproject.com/en/4.1/topics/email/
-EMAIL_CONFIG = env.email_url("EMAIL_URL", default="consolemail://")
+EMAIL_CONFIG = env.email_url("EMAIL_URL")
 vars().update(EMAIL_CONFIG)
 
 # Caches
 # https://docs.djangoproject.com/en/4.1/ref/settings/#caches
-CACHES = {"default": env.cache_url("CACHE_URL", default="locmemcache://")}
+CACHES = {"default": env.cache_url("CACHE_URL")}
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -186,5 +192,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AUTH_USER_MODEL = "core.CustomUser"
 
 # Our settings
-ADMIN_URL = env("ADMIN_URL", default="admin/")
+ADMIN_URL = env("ADMIN_URL")
 SITE_ID = 1

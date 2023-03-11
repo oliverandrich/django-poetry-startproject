@@ -42,6 +42,7 @@ line-length = 100
 [tool.pyright]
 venvPath = "."
 venv = ".venv"
+typeCheckingMode = "basic"
 
 [tool.pytest.ini_options]
 addopts = "--cov --nomigrations --reuse-db"
