@@ -34,6 +34,7 @@ It has no Postgres support included out of the box, because I am currently enjoy
 - pytest-django
 - pytest-randomly
 - pytest-timeout
+- sane ruff configuration in pyproject.toml
 
 ## Install
 
