@@ -187,10 +187,6 @@ CACHES = {"default": env.cache_url("CACHE_URL")}
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# Custom user model
-# https://docs.djangoproject.com/en/4.1/topics/auth/customizing/
-AUTH_USER_MODEL = "core.CustomUser"
-
 # Our settings
 ADMIN_URL = env("ADMIN_URL")
 SITE_ID = 1
