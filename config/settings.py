@@ -165,7 +165,7 @@ LOCALE_PATHS = [BASE_DIR / "locale/"]
 STATIC_ROOT = BASE_DIR / "static"
 STATIC_URL = "/static/"
 STATICFILES_DIRS = (str(BASE_DIR.joinpath("assets")),)
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 # User uploaded static files
 # https://docs.djangoproject.com/en/4.1/ref/settings/#media-url
