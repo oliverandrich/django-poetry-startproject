@@ -1,7 +1,3 @@
-> **Warning**
-> 
-> **I am sunsetting this project in favor of [django-pdm-startproject](https://github.com/oliverandrich/django-pdm-startproject) after transitioned to [pdm](https://pdm.fming.dev/latest/) for my current and new projects.**
-
 # django-poetry-startproject
 
 ![Screenshot of the landing page](docs/landingpage.png)
