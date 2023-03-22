@@ -18,6 +18,8 @@ It has no Postgres support included out of the box, because I am currently enjoy
 - django-tailwind-cli
 - django-ninja
 - django-health-check
+- django-fastdev
+- django-widget-tweaks
 - SQLite setup with WAL mode enabled
 - Local install of htmx
 - Local install of Alpine.js

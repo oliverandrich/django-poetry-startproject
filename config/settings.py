@@ -69,6 +69,8 @@ INSTALLED_APPS += [
     "health_check.contrib.migrations",
     "health_check.contrib.psutil",
     "django_browser_reload",
+    "widget_tweaks",
+    "django_fastdev",
 ]
 
 # Our apps
