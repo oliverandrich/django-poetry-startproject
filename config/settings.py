@@ -75,7 +75,6 @@ INSTALLED_APPS += [
 
 # Our apps
 INSTALLED_APPS += [
-    "core",
     "theme",
 ]
 

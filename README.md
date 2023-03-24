@@ -20,7 +20,7 @@ It has no Postgres support included out of the box, because I am currently enjoy
 - django-health-check
 - django-fastdev
 - django-widget-tweaks
-- SQLite setup with WAL mode enabled
+- SQLite setup with WAL mode enabled (See `config/__init__.py`.)
 - Local install of htmx
 - Local install of Alpine.js
 
