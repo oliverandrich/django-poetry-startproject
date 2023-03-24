@@ -21,6 +21,7 @@ It has no Postgres support included out of the box, because I am currently enjoy
 - django-fastdev
 - django-widget-tweaks
 - SQLite setup with WAL mode enabled (See `config/__init__.py`.)
+- [Argon2 password hashing is activated](https://docs.djangoproject.com/en/4.1/topics/auth/passwords/)
 - Local install of htmx
 - Local install of Alpine.js
 

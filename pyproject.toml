@@ -6,7 +6,7 @@ authors = ["Oliver Andrich <oliver@andrich.me>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-django = "^4.1"
+django = {extras = ["argon2"], version = "^4.1.7"}
 django-click = "^2.3.0"
 django-environ = "^0.10.0"
 django-health-check = "^3.17.0"
