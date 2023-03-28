@@ -15,7 +15,7 @@ It has no Postgres support included out of the box, because I am currently enjoy
 - django-environ
 - whitenoise
 - django-htmx
-- django-tailwind-cli
+- django-compressor with Sass support pre-configured. This requires a local [installation of dart-sasss](https://sass-lang.com/install). If you don't like Sass, just remove the reference to `screen.scss` from `base.html`.
 - django-ninja
 - django-health-check
 - django-fastdev
@@ -86,7 +86,3 @@ Follow the [installation instructions](https://django-mysql.readthedocs.io/en/la
 
 Contributions, issues and feature requests are welcome!
 Feel free to check [issues page](https://github.com/oliverandrich/django-poetry-startproject/issues).
-
-## TODO
-
-- Docker and docker-compose support

@@ -1,5 +1,5 @@
-# We don't include the compiled styles into the repo!
-theme/static
+# Static content collected with manage.py collectstatic must not be committed
+static
 
 # Ignore ruff sache
 .ruff_cache

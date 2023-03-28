@@ -60,10 +60,10 @@ INSTALLED_APPS = [
 
 # Third-party apps
 INSTALLED_APPS += [
+    "compressor",
     "django_browser_reload",
     "django_fastdev",
     "django_htmx",
-    "django_tailwind_cli",
     "health_check",
     "health_check.cache",
     "health_check.contrib.migrations",
@@ -73,9 +73,7 @@ INSTALLED_APPS += [
 ]
 
 # Our apps
-INSTALLED_APPS += [
-    "theme",
-]
+INSTALLED_APPS += []
 
 # Middleware definitions
 # https://docs.djangoproject.com/en/4.1/topics/http/middleware/
@@ -167,13 +165,23 @@ USE_I18N = True
 USE_TZ = True
 LOCALE_PATHS = [BASE_DIR / "locale/"]
 
-# Static files (CSS, JavaScript, Images)
+# Static files (SCSS, CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 # https://docs.djangoproject.com/en/4.1/ref/settings/#static-files
+# https://django-compressor.readthedocs.io/en/stable/settings.html
 STATIC_ROOT = BASE_DIR / "static"
 STATIC_URL = "/static/"
+STATICFILES_FINDERS = (
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+    "compressor.finders.CompressorFinder",
+)
 STATICFILES_DIRS = (str(BASE_DIR.joinpath("assets")),)
 STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
+
+COMPRESS_ENABLED = not DEBUG
+COMPRESS_OFFLINE = not DEBUG
+COMPRESS_PRECOMPILERS = (("text/x-scss", "sass {infile} {outfile}"),)
 
 # User uploaded static files
 # https://docs.djangoproject.com/en/4.1/ref/settings/#media-url

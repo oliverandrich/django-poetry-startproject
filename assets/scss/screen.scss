@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  color: black;
+  background-color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.message {
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 500;
+}
+
+.mode-switcher {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: none;
+}
+
+.icon {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.sun-icon {
+  display: none;
+  fill: white;
+}
+
+.moon-icon {
+  display: block;
+  fill: black;
+}
+
+.dark {
+  body {
+    color: white;
+    background: black;
+  }
+
+  .sun-icon {
+    display: block;
+  }
+
+  .moon-icon {
+    display: none;
+  }
+}
