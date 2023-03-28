@@ -15,7 +15,7 @@ django-ninja = "^0.21.0"
 psutil = "^5.9.4"
 python = "^3.11"
 pytz = "^2023.2"
-whitenoise = "^6.3.0"
+whitenoise = {extras = ["brotli"], version = "^6.4.0"}
 django-fastdev = "^1.7.3"
 django-compressor = "^4.3.1"
 
