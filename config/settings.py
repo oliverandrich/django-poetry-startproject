@@ -60,17 +60,16 @@ INSTALLED_APPS = [
 
 # Third-party apps
 INSTALLED_APPS += [
-    "django_tailwind_cli",
+    "django_browser_reload",
+    "django_fastdev",
     "django_htmx",
+    "django_tailwind_cli",
     "health_check",
-    "health_check.db",  # stock Django health checkers
     "health_check.cache",
-    "health_check.storage",
     "health_check.contrib.migrations",
     "health_check.contrib.psutil",
-    "django_browser_reload",
-    "widget_tweaks",
-    "django_fastdev",
+    "health_check.db",
+    "health_check.storage",
 ]
 
 # Our apps
@@ -124,7 +123,6 @@ TEMPLATES = [
 # (e.g. runserver) will use.
 # https://docs.djangoproject.com/en/4.1/ref/settings/#wsgi-application
 WSGI_APPLICATION = "config.wsgi.application"
-
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases

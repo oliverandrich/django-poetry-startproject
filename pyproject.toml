@@ -6,7 +6,7 @@ authors = ["Oliver Andrich <oliver@andrich.me>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-django = {extras = ["argon2"], version = "^4.1.7"}
+django = { extras = ["argon2"], version = "^4.1.7" }
 django-click = "^2.3.0"
 django-environ = "^0.10.0"
 django-health-check = "^3.17.0"
@@ -17,7 +17,6 @@ psutil = "^5.9.4"
 python = "^3.11"
 pytz = "^2022.7.1"
 whitenoise = "^6.3.0"
-django-widget-tweaks = "^1.4.12"
 django-fastdev = "^1.7.3"
 
 [tool.poetry.group.dev.dependencies]
