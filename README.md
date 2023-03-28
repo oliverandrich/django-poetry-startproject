@@ -1,7 +1,5 @@
 # django-poetry-startproject
 
-![Screenshot of the landing page](docs/landingpage.png)
-
 > Django startproject template with some poetry.
 
 I took the inspiration from Jeff Triplett's [django-startproject](https://github.com/jefftriplett/django-startproject) and created my own starter for a fresh django project. It includes even more batteries than Jeff's. 🤷‍♂️
