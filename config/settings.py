@@ -181,7 +181,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 COMPRESS_ENABLED = not DEBUG
 COMPRESS_OFFLINE = not DEBUG
-COMPRESS_PRECOMPILERS = (("text/x-scss", "sass {infile} {outfile}"),)
+COMPRESS_PRECOMPILERS = (("text/x-scss", "sass --embed-source-map {infile} {outfile}"),)
 
 # User uploaded static files
 # https://docs.djangoproject.com/en/4.1/ref/settings/#media-url
