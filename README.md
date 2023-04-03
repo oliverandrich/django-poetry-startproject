@@ -8,7 +8,7 @@ It has no Postgres support included out of the box, because I am currently enjoy
 
 ## Features
 
-- Django 4.1.x
+- Django 4.2.x
 - django-click
 - django-environ
 - whitenoise
