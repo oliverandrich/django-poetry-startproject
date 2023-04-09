@@ -1,5 +1,7 @@
 # django-poetry-startproject
 
+![Screenshot of the landing page](docs/landingpage.png)
+
 > Django startproject template with some poetry.
 
 I took the inspiration from Jeff Triplett's [django-startproject](https://github.com/jefftriplett/django-startproject) and created my own starter for a fresh django project. It includes even more batteries than Jeff's. 🤷‍♂️
@@ -9,14 +11,14 @@ It has no Postgres support included out of the box, because I am currently enjoy
 ## Features
 
 - Django 4.2.x
-- django-click
 - django-environ
 - whitenoise
+- django-tailwind-cli
 - django-htmx
-- django-compressor with Sass support pre-configured. This requires a local [installation of dart-sasss](https://sass-lang.com/install). If you don't like Sass, just remove the reference to `screen.scss` from `base.html`.
 - django-ninja
 - django-health-check
 - django-fastdev
+- django-browser-reload
 - SQLite setup with WAL mode enabled (See `config/__init__.py`.)
 - [Argon2 password hashing is activated](https://docs.djangoproject.com/en/4.1/topics/auth/passwords/)
 - Local install of htmx
@@ -24,7 +26,6 @@ It has no Postgres support included out of the box, because I am currently enjoy
 
 ### CI
 
-- django-browser-reload
 - django-test-plus
 - django-types
 - model-bakery
@@ -34,6 +35,7 @@ It has no Postgres support included out of the box, because I am currently enjoy
 - pytest-django
 - pytest-randomly
 - pytest-timeout
+- syrupy
 - sane ruff configuration in pyproject.toml
 
 ## Install
