@@ -11,31 +11,22 @@ It has no Postgres support included out of the box, because I am currently enjoy
 ## Features
 
 - Django 4.2.x
-- django-environ
-- whitenoise
-- django-tailwind-cli
-- django-htmx
-- django-ninja
-- django-health-check
-- django-fastdev
 - django-browser-reload
+- django-environ
+- django-fastdev
+- django-htmx
+- django-rich
+- django-tailwind-cli
+- whitenoise
 - SQLite setup with WAL mode enabled (See `config/__init__.py`.)
 - [Argon2 password hashing is activated](https://docs.djangoproject.com/en/4.1/topics/auth/passwords/)
-- Local install of htmx
-- Local install of Alpine.js
+- Local install of htmx.
 
-### CI
+### Development tools
 
-- django-test-plus
 - django-types
 - model-bakery
 - pre-commit setup inspired by [Boost your Django DX](https://adamchainz.gumroad.com/l/byddx)
-- pytest
-- pytest-cov
-- pytest-django
-- pytest-randomly
-- pytest-timeout
-- syrupy
 - sane ruff configuration in pyproject.toml
 
 ## Install
@@ -57,11 +48,8 @@ poetry install
 # Migrate database
 poetry run ./manage.py migrate
 
-# Start tailwind server
-poetry run ./manage.py tailwind watch
-
 # Start dev server
-poetry run ./manage.py runserver
+poetry run ./manage.py tailwind runserver
 ```
 
 ### Add Postgres support

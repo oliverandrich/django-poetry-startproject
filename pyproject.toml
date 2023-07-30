@@ -7,30 +7,21 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 django = { extras = ["argon2"], version = "^4.2" }
+django-browser-reload = "^1.7.0"
 django-environ = "^0.10.0"
-django-health-check = "^3.17.0"
+django-fastdev = "^1.7.3"
 django-htmx = "^1.13.0"
-django-ninja = "^0.21.0"
-psutil = "^5.9.4"
+django-rich = "^1.7.0"
+django-tailwind-cli = "^2.0.6"
 python = "^3.11"
 pytz = "^2023.2"
 whitenoise = { extras = ["brotli"], version = "^6.4.0" }
-django-fastdev = "^1.7.3"
-django-tailwind-cli = "^1.4.1"
-django-browser-reload = "^1.7.0"
 
 [tool.poetry.group.dev.dependencies]
-django-test-plus = "^2.2.1"
 django-types = "^0.17.0"
 ipdb = "^0.13.11"
 model-bakery = "^1.9.0"
 pre-commit = "^3.1.1"
-pytest = "^7.2.0"
-pytest-cov = "^4.0.0"
-pytest-django = "^4.5.2"
-pytest-randomly = "^3.12.0"
-pytest-timeout = "^2.1.0"
-syrupy = "^4.0.1"
 
 [build-system]
 requires = ["poetry-core"]

@@ -1,6 +1,9 @@
 # Static content collected with manage.py collectstatic must not be committed
 static
 
+# Compiled tailwind file must not be committed.
+assets/css/tailwind.css
+
 # Ignore ruff sache
 .ruff_cache
 

@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Home{% endblock title %}</title>
     {% tailwind_css %}
-    <script src="{% static 'js/alpine.min.js' %}" defer></script>
     <script src="{% static 'js/htmx.min.js' %}" defer></script>
     {% django_htmx_script %}
     {% django_browser_reload_script %}
@@ -17,7 +16,7 @@
     {% block content %}
       <div class="min-h-screen flex justify-center items-center">
         <div class="text-5xl">
-          Django + Tailwind + HTMX + Alpine.js = ❤️
+          Django + Tailwind + HTMX = ❤️
         </div>
       </div>
     {% endblock content %}

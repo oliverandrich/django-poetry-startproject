@@ -26,6 +26,7 @@ env = environ.Env(
     EMAIL_URL=(str, "consolemail://"),
     CACHE_URL=(str, "locmemcache://"),
     ADMIN_URL=(str, "admin/"),
+    INTERNAL_IPS=(list, []),
 )
 environ.Env.read_env(BASE_DIR / ".env")
 
@@ -40,6 +41,10 @@ DEBUG = env.bool("DJANGO_DEBUG")
 # A list of strings representing the host/domain names that this Django site can serve.
 # https://docs.djangoproject.com/en/4.1/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
+
+# A list of IP addresses that are allowed to access the django debug toolbar.
+# https://docs.djangoproject.com/en/4.2/ref/settings/#internal-ips
+INTERNAL_IPS = env.list("ALLOWED_HOSTS")
 
 # A list of trusted origins for unsafe requests (e.g. POST).
 # https://docs.djangoproject.com/en/4.1/ref/settings/#csrf-trusted-origins
@@ -63,17 +68,11 @@ INSTALLED_APPS += [
     "django_browser_reload",
     "django_fastdev",
     "django_htmx",
-    "health_check",
-    "health_check.cache",
-    "health_check.contrib.migrations",
-    "health_check.contrib.psutil",
-    "health_check.db",
-    "health_check.storage",
     "django_tailwind_cli",
 ]
 
 # Our apps
-INSTALLED_APPS += ["theme"]
+INSTALLED_APPS += []
 
 # Middleware definitions
 # https://docs.djangoproject.com/en/4.1/topics/http/middleware/
@@ -195,6 +194,10 @@ CACHES = {"default": env.cache_url("CACHE_URL")}
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# django-rich Test Runner
+# https://github.com/adamchainz/django-rich#django_richtestrichrunner
+TEST_RUNNER = "django_rich.test.RichRunner"
 
 # Our settings
 ADMIN_URL = env("ADMIN_URL")
