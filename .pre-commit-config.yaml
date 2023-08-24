@@ -20,30 +20,23 @@ repos:
     hooks:
       - id: black
 
-  - repo: https://github.com/asottile/blacken-docs
-    rev: 1.15.0
-    hooks:
-      - id: blacken-docs
-        additional_dependencies:
-          - black==22.10.0
-
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: "v0.0.280"
+    rev: "v0.0.285"
     hooks:
       - id: ruff
 
   - repo: https://github.com/RobertCraigie/pyright-python
-    rev: v1.1.318
+    rev: v1.1.324
     hooks:
       - id: pyright
 
   - repo: https://github.com/asottile/pyupgrade
-    rev: v3.9.0
+    rev: v3.10.1
     hooks:
       - id: pyupgrade
 
   - repo: https://github.com/adamchainz/django-upgrade
-    rev: 1.14.0
+    rev: 1.14.1
     hooks:
       - id: django-upgrade
         args: [--target-version, "4.2"]
@@ -54,3 +47,8 @@ repos:
       - id: djhtml
         args:
           - --tabwidth=4
+
+  - repo: https://github.com/thibaudcolas/curlylint
+    rev: "v0.13.1"
+    hooks:
+      - id: curlylint
