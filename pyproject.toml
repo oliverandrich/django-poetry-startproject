@@ -8,7 +8,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 django = { extras = ["argon2"], version = "^4.2" }
 django-browser-reload = "^1.9.0"
-django-environ = "^0.10.0"
+django-environ = "^0.11.0"
 django-htmx = "^1.15.0"
 django-tailwind-cli = "^2.3.0"
 python = "^3.11"
@@ -48,7 +48,7 @@ DJANGO_SETTINGS_MODULE = "{{ project_name }}.settings"
 python_files = "tests.py test_*.py"
 
 [tool.coverage.run]
-source=["."]
+source = ["."]
 branch = true
 parallel = true
 omit = ["config/__version__.py"]
