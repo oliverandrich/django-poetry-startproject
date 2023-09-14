@@ -129,10 +129,12 @@ ignore = [
 unfixable = [
   # Don't touch unused imports
   "F401",
+  # Don't touch unused variables
+  "F841",
 ]
 
 [tool.ruff.isort]
-known-first-party = ["django_tailwind_cli"]
+known-first-party = ["{{ project_name }}"]
 
 [tool.ruff.flake8-tidy-imports]
 ban-relative-imports = "all"
