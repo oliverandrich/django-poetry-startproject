@@ -6,20 +6,21 @@ authors = ["Oliver Andrich <oliver@andrich.me>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
+python = "^3.12"
 django = { extras = ["argon2"], version = "^4.2" }
-django-browser-reload = "^1.9.0"
-django-environ = "^0.11.0"
-django-htmx = "^1.15.0"
-django-tailwind-cli = "^2.3.0"
-python = "^3.11"
+django-browser-reload = "^1.11.0"
+django-environ = "^0.11.2"
+django-htmx = "^1.16.0"
 pytz = "^2023.3"
 whitenoise = { extras = ["brotli"], version = "^6.5.0" }
+django-tailwind-cli = { extras = ["django-extensions"], version = "^2.4.2" }
+gunicorn = "^21.2.0"
 
 [tool.poetry.group.dev.dependencies]
-django-types = "^0.17.0"
-ipdb = "^0.13.11"
-model-bakery = "^1.9.0"
-pre-commit = "^3.1.1"
+django-types = "^0.18.0"
+ipdb = "^0.13.13"
+model-bakery = "^1.15.0"
+pre-commit = "^3.4.0"
 pytest = "^7.4.0"
 pytest-mock = "^3.11.1"
 pytest-django = "^4.5.2"

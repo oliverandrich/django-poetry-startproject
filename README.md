@@ -46,7 +46,6 @@ django-admin startproject \
 # Setup environment
 cd example_project
 echo "DJANGO_DEBUG=True" >> .env
-echo "SECRET_KEY=notsosecret" >> .env
 
 # Install dependencies
 poetry install
@@ -56,6 +55,10 @@ poetry run ./manage.py migrate
 
 # Start dev server
 poetry run ./manage.py tailwind runserver
+
+# Or if you prefer django-extensions runserver_plus
+poetry run ./manage.py tailwind runserver_plus
+
 ```
 
 ### Add Postgres support
@@ -75,6 +78,30 @@ poetry add mysqlclient django-mysql
 ```
 
 Follow the [installation instructions](https://django-mysql.readthedocs.io/en/latest/installation.html#id1) of `django-mysql` and set the environment variable DATABASE_URL to [something reasonable](https://django-environ.readthedocs.io/en/latest/types.html#environ-env-db-url)
+
+## Environemt Variables for Docker
+
+Or when run as a [12-Factor application](https://12factor.net).
+
+| Environment Variable         | Default                   | Location                       |
+| ---------------------------- | ------------------------- | ------------------------------ |
+| SECRET_KEY                   | `get_random_secret_key()` | {{ project_name }}/settings.py |
+| DJANGO_DEBUG                 | False                     | {{ project_name }}/settings.py |
+| ALLOWED_HOSTS                | []                        | {{ project_name }}/settings.py |
+| CSRF_TRUSTED_ORIGINS         | []                        | {{ project_name }}/settings.py |
+| DATABASE_URL                 | "sqlite://?timeout=20"    | {{ project_name }}/settings.py |
+| EMAIL_URL                    | "consolemail://"          | {{ project_name }}/settings.py |
+| CACHE_URL                    | "locmemcache://"          | {{ project_name }}/settings.py |
+| ADMIN_URL                    | "admin/"                  | {{ project_name }}/settings.py |
+| INTERNAL_IPS                 | []                        | {{ project_name }}/settings.py |
+| TAILWIND_CLI_PATH            | "~/.local/bin"            | {{ project_name }}/settings.py |
+| GUNICORN_WORKERS             | "~/.local/bin"            | gunicorn.conf.py               |
+| GUNICORN_MAX_REQUESTS        | 1000                      | gunicorn.conf.py               |
+| GUNICORN_MAX_REQUESTS_JITTER | 50                        | gunicorn.conf.py               |
+
+## Docker and docker-compose
+
+The `Dockerfile` uses a multi stage process to embracing caching for building the container images.
 
 ## Contributing
 

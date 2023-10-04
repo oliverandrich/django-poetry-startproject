@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 
 import environ
+from django.core.management.utils import get_random_secret_key
 from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -19,14 +20,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Read environment variables from the environment and a .env file.
 env = environ.Env(
+    SECRET_KEY=(str, get_random_secret_key()),
     DJANGO_DEBUG=(bool, False),
     ALLOWED_HOSTS=(list, []),
     CSRF_TRUSTED_ORIGINS=(list, []),
-    DATABASE_URL=(str, "sqlite:///db.sqlite3?timeout=20"),
+    DATABASE_URL=(str, "sqlite://?timeout=20"),
     EMAIL_URL=(str, "consolemail://"),
     CACHE_URL=(str, "locmemcache://"),
     ADMIN_URL=(str, "admin/"),
     INTERNAL_IPS=(list, []),
+    TAILWIND_CLI_PATH=(str, "~/.local/bin"),
 )
 environ.Env.read_env(BASE_DIR / ".env")
 
@@ -68,12 +71,11 @@ INSTALLED_APPS += [
     "django_browser_reload",
     "django_htmx",
     "django_tailwind_cli",
+    "django_extensions",
 ]
 
 # Our apps
-INSTALLED_APPS += [
-    "{{ project_name }}"
-]
+INSTALLED_APPS += ["{{ project_name }}"]
 
 # Middleware definitions
 # https://docs.djangoproject.com/en/4.1/topics/http/middleware/
@@ -194,6 +196,9 @@ CACHES = {"default": env.cache_url("CACHE_URL")}
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# django-tailwind-cli settings
+TAILWIND_CLI_PATH = env.str("TAILWIND_CLI_PATH")
 
 # Our settings
 ADMIN_URL = env("ADMIN_URL")
