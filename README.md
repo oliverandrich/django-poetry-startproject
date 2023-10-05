@@ -83,21 +83,21 @@ Follow the [installation instructions](https://django-mysql.readthedocs.io/en/la
 
 Or when run as a [12-Factor application](https://12factor.net).
 
-| Environment Variable         | Default                   | Location                       |
-| ---------------------------- | ------------------------- | ------------------------------ |
-| SECRET_KEY                   | `get_random_secret_key()` | {{ project_name }}/settings.py |
-| DJANGO_DEBUG                 | False                     | {{ project_name }}/settings.py |
-| ALLOWED_HOSTS                | []                        | {{ project_name }}/settings.py |
-| CSRF_TRUSTED_ORIGINS         | []                        | {{ project_name }}/settings.py |
-| DATABASE_URL                 | "sqlite://?timeout=20"    | {{ project_name }}/settings.py |
-| EMAIL_URL                    | "consolemail://"          | {{ project_name }}/settings.py |
-| CACHE_URL                    | "locmemcache://"          | {{ project_name }}/settings.py |
-| ADMIN_URL                    | "admin/"                  | {{ project_name }}/settings.py |
-| INTERNAL_IPS                 | []                        | {{ project_name }}/settings.py |
-| TAILWIND_CLI_PATH            | "~/.local/bin"            | {{ project_name }}/settings.py |
-| GUNICORN_WORKERS             | "~/.local/bin"            | gunicorn.conf.py               |
-| GUNICORN_MAX_REQUESTS        | 1000                      | gunicorn.conf.py               |
-| GUNICORN_MAX_REQUESTS_JITTER | 50                        | gunicorn.conf.py               |
+| Environment Variable         | Default                   | Location         |
+| ---------------------------- | ------------------------- | ---------------- |
+| SECRET_KEY                   | `get_random_secret_key()` | settings.py      |
+| DJANGO_DEBUG                 | False                     | settings.py      |
+| ALLOWED_HOSTS                | []                        | settings.py      |
+| CSRF_TRUSTED_ORIGINS         | []                        | settings.py      |
+| DATABASE_URL                 | "sqlite://?timeout=20"    | settings.py      |
+| EMAIL_URL                    | "consolemail://"          | settings.py      |
+| CACHE_URL                    | "locmemcache://"          | settings.py      |
+| ADMIN_URL                    | "admin/"                  | settings.py      |
+| INTERNAL_IPS                 | []                        | settings.py      |
+| TAILWIND_CLI_PATH            | "~/.local/bin"            | settings.py      |
+| GUNICORN_WORKERS             | "~/.local/bin"            | gunicorn.conf.py |
+| GUNICORN_MAX_REQUESTS        | 1000                      | gunicorn.conf.py |
+| GUNICORN_MAX_REQUESTS_JITTER | 50                        | gunicorn.conf.py |
 
 ## Docker and docker-compose
 
