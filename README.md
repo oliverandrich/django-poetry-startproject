@@ -17,6 +17,7 @@ Out of the box SQLite is configured, but you can easily activate MySQL or Postgr
 - django-environ
 - django-htmx
 - django-tailwind-cli
+- django-rich
 - whitenoise
 - SQLite setup with WAL mode enabled (See `config/__init__.py`.)
 - [Argon2 password hashing is activated](https://docs.djangoproject.com/en/4.1/topics/auth/passwords/)
@@ -26,14 +27,10 @@ Out of the box SQLite is configured, but you can easily activate MySQL or Postgr
 ### Development tools
 
 - django-types
+- django-test-plus
 - model-bakery
-- pytest
-- pytest-cov
-- pytest-django
-- pytest-mock
 - pre-commit setup inspired by [Boost your Django DX](https://adamchainz.gumroad.com/l/byddx)
 - sane ruff configuration
-- syrupy for snapshot testing
 
 ## Install
 

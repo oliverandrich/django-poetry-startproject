@@ -501,6 +501,20 @@ werkzeug = {version = ">=3.0.0,<4.0.0", optional = true, markers = "extra == \"d
 django-extensions = ["django-extensions (>=3.2.1,<4.0.0)", "werkzeug (>=3.0.0,<4.0.0)"]
 
 [[package]]
+name = "django-test-plus"
+version = "2.2.3"
+description = "\"django-test-plus provides useful additions to Django's default TestCase\""
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "django-test-plus-2.2.3.tar.gz", hash = "sha256:72e1ca5dcaaf4ad73c9c796ad6e0dc165db39f706c3ad822074d961f72eed743"},
+    {file = "django_test_plus-2.2.3-py3-none-any.whl", hash = "sha256:5a8e26c9bf8eab092012c2cce9c605e0dba5a15879771feeb992c424504a18fe"},
+]
+
+[package.extras]
+test = ["factory-boy", "flake8", "pyflakes", "pytest", "pytest-cov", "pytest-django", "pytest-pythonpath"]
+
+[[package]]
 name = "django-types"
 version = "0.18.0"
 description = "Type stubs for Django"
@@ -1188,4 +1202,4 @@ brotli = ["Brotli"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "802926fa8423b6702e5b24db437a983ca2120c9ff8e92fc4b84602ff141e6fd0"
+content-hash = "07217da1185a68f1c7df6dafad64487b09ebb004d7fbef7845c8f38b8f1a2d9c"

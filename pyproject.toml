@@ -23,6 +23,7 @@ ipdb = "^0.13.13"
 model-bakery = "^1.15.0"
 pre-commit = "^3.4.0"
 coverage = {extras = ["toml"], version = "^7.3.2"}
+django-test-plus = "^2.2.3"
 
 [build-system]
 requires = ["poetry-core"]
