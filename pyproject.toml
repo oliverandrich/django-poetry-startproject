@@ -15,19 +15,14 @@ pytz = "^2023.3"
 whitenoise = { extras = ["brotli"], version = "^6.5.0" }
 django-tailwind-cli = { extras = ["django-extensions"], version = "^2.4.2" }
 gunicorn = "^21.2.0"
+django-rich = "^1.7.0"
 
 [tool.poetry.group.dev.dependencies]
 django-types = "^0.18.0"
 ipdb = "^0.13.13"
 model-bakery = "^1.15.0"
 pre-commit = "^3.4.0"
-pytest = "^7.4.0"
-pytest-mock = "^3.11.1"
-pytest-django = "^4.5.2"
-pytest-cov = "^4.1.0"
-pytest-sugar = "^0.9.7"
-pytest-randomly = "^3.15.0"
-syrupy = "^4.2.1"
+coverage = {extras = ["toml"], version = "^7.3.2"}
 
 [build-system]
 requires = ["poetry-core"]
@@ -43,16 +38,9 @@ venvPath = "."
 venv = ".venv"
 typeCheckingMode = "basic"
 
-[tool.pytest.ini_options]
-addopts = "--no-header"
-DJANGO_SETTINGS_MODULE = "{{ project_name }}.settings"
-python_files = "tests.py test_*.py"
-
 [tool.coverage.run]
 source = ["."]
 branch = true
-parallel = true
-omit = ["config/__version__.py"]
 
 [tool.coverage.report]
 exclude_lines = ["no cov", "if __name__ == .__main__.:", "if TYPE_CHECKING:"]

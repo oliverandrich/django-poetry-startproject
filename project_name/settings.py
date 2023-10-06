@@ -197,6 +197,10 @@ CACHES = {"default": env.cache_url("CACHE_URL")}
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+# django-rich Testrunner
+# https://github.com/adamchainz/django-rich#django_richtestrichrunner
+TEST_RUNNER = "django_rich.test.RichRunner"
+
 # django-tailwind-cli settings
 TAILWIND_CLI_PATH = env.str("TAILWIND_CLI_PATH")
 
