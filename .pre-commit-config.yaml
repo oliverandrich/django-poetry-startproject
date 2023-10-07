@@ -16,27 +16,27 @@ repos:
       - id: check-json
 
   - repo: https://github.com/psf/black
-    rev: 23.7.0
+    rev: 23.9.1
     hooks:
       - id: black
 
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: "v0.0.285"
+    rev: "v0.0.292"
     hooks:
       - id: ruff
 
   - repo: https://github.com/RobertCraigie/pyright-python
-    rev: v1.1.324
+    rev: v1.1.329
     hooks:
       - id: pyright
 
   - repo: https://github.com/asottile/pyupgrade
-    rev: v3.10.1
+    rev: v3.14.0
     hooks:
       - id: pyupgrade
 
   - repo: https://github.com/adamchainz/django-upgrade
-    rev: 1.14.1
+    rev: 1.15.0
     hooks:
       - id: django-upgrade
         args: [--target-version, "4.2"]
