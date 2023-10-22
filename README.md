@@ -12,7 +12,6 @@ Out of the box SQLite is configured, but you can easily activate MySQL or Postgr
 
 ## Features
 
-- Python 3.12
 - Django 4.2.x
 - django-browser-reload
 - django-environ
