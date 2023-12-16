@@ -11,47 +11,36 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 
-import environ
 from django.core.management.utils import get_random_secret_key
 from django.utils.translation import gettext_lazy as _
+from environs import Env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Read environment variables from the environment and a .env file.
-env = environ.Env(
-    SECRET_KEY=(str, get_random_secret_key()),
-    DJANGO_DEBUG=(bool, False),
-    ALLOWED_HOSTS=(list, []),
-    CSRF_TRUSTED_ORIGINS=(list, []),
-    DATABASE_URL=(str, "sqlite://?timeout=20"),
-    EMAIL_URL=(str, "consolemail://"),
-    CACHE_URL=(str, "locmemcache://"),
-    ADMIN_URL=(str, "admin/"),
-    INTERNAL_IPS=(list, []),
-    TAILWIND_CLI_PATH=(str, "~/.local/bin"),
-)
-environ.Env.read_env(BASE_DIR / ".env")
+env = Env()
+env.read_env()
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # https://docs.djangoproject.com/en/4.1/ref/settings/#secret-key
-SECRET_KEY = env("SECRET_KEY")
+SECRET_KEY = env.str("SECRET_KEY", default=get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # https://docs.djangoproject.com/en/4.1/ref/settings/#debug
-DEBUG = env.bool("DJANGO_DEBUG")
+DEBUG = env.bool("DEBUG", default=False)
 
 # A list of strings representing the host/domain names that this Django site can serve.
 # https://docs.djangoproject.com/en/4.1/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=[])
 
 # A list of IP addresses that are allowed to access the django debug toolbar.
 # https://docs.djangoproject.com/en/4.2/ref/settings/#internal-ips
-INTERNAL_IPS = env.list("ALLOWED_HOSTS")
+INTERNAL_IPS = env.list("INTERNAL_IPS", default=[])
 
 # A list of trusted origins for unsafe requests (e.g. POST).
 # https://docs.djangoproject.com/en/4.1/ref/settings/#csrf-trusted-origins
-CSRF_TRUSTED_ORIGINS = env.list("CSRF_TRUSTED_ORIGINS")
+CSRF_TRUSTED_ORIGINS = env.list("CSRF_TRUSTED_ORIGINS", default=[])
 
 # Application definition
 # https://docs.djangoproject.com/en/4.1/ref/settings/#installed-apps
@@ -125,7 +114,7 @@ WSGI_APPLICATION = "{{ project_name }}.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-DATABASES = {"default": env.db_url("DATABASE_URL")}
+DATABASES = {"default": env.dj_db_url("DATABASE_URL", default="sqlite:///db.sqlite3")}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -156,12 +145,12 @@ PASSWORD_HASHERS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
-LANGUAGE_CODE = "en"
+LANGUAGE_CODE = env.str("LANGUAGE_CODE", default="en")
 LANGUAGES = [
     ("en", _("English")),
     ("de", _("German")),
 ]
-TIME_ZONE = "UTC"
+TIME_ZONE = env.str("TIME_ZONE", default="UTC")
 USE_I18N = True
 USE_TZ = True
 
@@ -186,20 +175,20 @@ MEDIA_ROOT = BASE_DIR / "media"
 # Email backend
 # https://docs.djangoproject.com/en/4.1/ref/settings/#email-backend
 # https://docs.djangoproject.com/en/4.1/topics/email/
-EMAIL_CONFIG = env.email_url("EMAIL_URL")
+EMAIL_CONFIG = env.dj_email_url("EMAIL_URL", default="console:")
 vars().update(EMAIL_CONFIG)
 
 # Caches
 # https://docs.djangoproject.com/en/4.1/ref/settings/#caches
-CACHES = {"default": env.cache_url("CACHE_URL")}
+CACHES = {"default": env.dj_cache_url("CACHE_URL", default="locmem://")}
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # django-tailwind-cli settings
-TAILWIND_CLI_PATH = env.str("TAILWIND_CLI_PATH")
+TAILWIND_CLI_PATH = env.str("TAILWIND_CLI_PATH", default="~/.local/bin")
 
 # Our settings
-ADMIN_URL = env("ADMIN_URL")
+ADMIN_URL = env.str("ADMIN_URL", default="admin")
 SITE_ID = 1
