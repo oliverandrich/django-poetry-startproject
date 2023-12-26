@@ -88,7 +88,7 @@ Or when run as a [12-Factor application](https://12factor.net).
 | ALLOWED_HOSTS                | []                                    | settings.py      |
 | CACHE_URL                    | "locmem://"                           | settings.py      |
 | CSRF_TRUSTED_ORIGINS         | []                                    | settings.py      |
-| DATABASE_URL                 | "sqlite:///db.sqlite3"                | settings.py      |
+| DATABASE_URL                 | "sqlite:///db/db.sqlite3?timeout=20"  | settings.py      |
 | DEBUG                        | False                                 | settings.py      |
 | EMAIL_URL                    | "console:"                            | settings.py      |
 | GUNICORN_BIND                | "0.0.0.0:8000"                        | gunicorn.conf.py |

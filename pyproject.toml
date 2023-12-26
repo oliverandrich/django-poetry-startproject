@@ -34,7 +34,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.black]
 target-version = ["py312"]
-line-length = 100
+line-length = 120
 skip-string-normalization = true
 
 [tool.pyright]
@@ -78,7 +78,7 @@ tabindex_no_positive = true
 
 [tool.ruff]
 target-version = "py312"
-line-length = 100
+line-length = 120
 select = [
   "A",
   "ARG",

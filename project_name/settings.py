@@ -107,14 +107,14 @@ TEMPLATES = [
     },
 ]
 
-# The full Python path of the WSGI application object that Django’s built-in servers
+# The full Python path of the WSGI application object that Django`s built-in servers
 # (e.g. runserver) will use.
 # https://docs.djangoproject.com/en/4.1/ref/settings/#wsgi-application
 WSGI_APPLICATION = "{{ project_name }}.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-DATABASES = {"default": env.dj_db_url("DATABASE_URL", default="sqlite:///db.sqlite3")}
+DATABASES = {"default": env.dj_db_url("DATABASE_URL", default="sqlite:///db/db.sqlite3?timeout=20")}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
