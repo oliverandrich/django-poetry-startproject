@@ -19,11 +19,13 @@ Out of the box SQLite is configured, but you can easily activate MySQL or Postgr
 - django-tailwind-cli
 - django-dirtyfields
 - environs
+- heroicons
 - whitenoise
 - SQLite setup with WAL mode enabled (See `<project_name>/__init__.py`.)
 - [Argon2 password hashing is activated](https://docs.djangoproject.com/en/4.1/topics/auth/passwords/)
 - Local install of htmx.
 - uses the [single folder Django project layout](https://noumenal.es/notes/django/single-folder-layout/)
+- [adds some standard templatetags to the builtins](https://adamj.eu/tech/2023/09/15/django-move-template-tag-library-builtins/)
 
 ### Development tools
 

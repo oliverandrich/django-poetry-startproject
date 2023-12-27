@@ -103,6 +103,14 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.template.context_processors.static",
             ],
+            "builtins": [
+                # "django.contrib.humanize.templatetags.humanize",
+                "django.templatetags.i18n",
+                # "django.templatetags.l10n",
+                "django.templatetags.static",
+                # "django.templatetags.tz"
+                "heroicons.templatetags.heroicons",
+            ],
         },
     },
 ]

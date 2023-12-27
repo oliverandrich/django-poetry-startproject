@@ -16,6 +16,7 @@ django-tailwind-cli = { extras = ["django-extensions"], version = "^2.7.2" }
 gunicorn = "^21.2.0"
 environs = { extras = ["django"], version = "^10.0.0" }
 django-dirtyfields = "^1.9.2"
+heroicons = "^2.6.0"
 
 [tool.poetry.group.dev.dependencies]
 django-types = "^0.19.1"

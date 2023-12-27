@@ -603,6 +603,21 @@ setproctitle = ["setproctitle"]
 tornado = ["tornado (>=0.2)"]
 
 [[package]]
+name = "heroicons"
+version = "2.6.0"
+description = "Use heroicons in your Django and Jinja templates."
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "heroicons-2.6.0-py3-none-any.whl", hash = "sha256:17a2b5c726768f3caacd2b6d5006d9047ba4690ed1f396d2f71617eea3efda81"},
+    {file = "heroicons-2.6.0.tar.gz", hash = "sha256:fd2408c7fa058b35eb1f821aab485ecd0261d7f5ec6544f1dddcb7cb591427bd"},
+]
+
+[package.extras]
+django = ["django (>=2.2)"]
+jinja = ["jinja2 (>=2.8)"]
+
+[[package]]
 name = "identify"
 version = "2.5.33"
 description = "File identification library for Python"
@@ -1319,4 +1334,4 @@ brotli = ["Brotli"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "78ac8399afe88aa99a5241785df66f59abe562d0fba8ca3dfc1fadd7fdaacf2a"
+content-hash = "55fe1567f93f669dfd9f7b31b996f28737fcd07ce661cef0781a9f08a42940e2"
