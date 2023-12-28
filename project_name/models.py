@@ -11,4 +11,4 @@ class BaseModel(DirtyFieldsMixin, models.Model):
         abstract = True
 
     def __str__(self):
-        return super().__str__()
+        return f"{self.__class__.__name__} object (id: {self.pk})"
