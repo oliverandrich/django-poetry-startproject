@@ -2,6 +2,15 @@ default_language_version:
   python: python3.12
 
 repos:
+  - repo: local
+    hooks:
+      - id: mypy
+        name: mypy local
+        entry: poetry run mypy
+        require_serial: true
+        language: system
+        types: [python]
+
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.5.0
     hooks:
@@ -16,27 +25,22 @@ repos:
       - id: check-json
 
   - repo: https://github.com/psf/black
-    rev: 23.12.1
+    rev: 24.2.0
     hooks:
       - id: black
 
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: "v0.1.9"
+    rev: "v0.3.0"
     hooks:
       - id: ruff
 
-  - repo: https://github.com/RobertCraigie/pyright-python
-    rev: v1.1.343
-    hooks:
-      - id: pyright
-
   - repo: https://github.com/asottile/pyupgrade
-    rev: v3.15.0
+    rev: v3.15.1
     hooks:
       - id: pyupgrade
 
   - repo: https://github.com/adamchainz/django-upgrade
-    rev: 1.15.0
+    rev: 1.16.0
     hooks:
       - id: django-upgrade
         args: [--target-version, "5.0"]

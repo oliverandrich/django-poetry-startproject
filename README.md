@@ -17,8 +17,7 @@ Out of the box SQLite is configured, but you can easily activate MySQL or Postgr
 - django-browser-reload
 - django-htmx
 - django-tailwind-cli
-- django-dirtyfields
-- environs
+- environs\[django\]
 - heroicons
 - whitenoise
 - SQLite setup with WAL mode enabled (See `<project_name>/__init__.py`.)
@@ -29,7 +28,7 @@ Out of the box SQLite is configured, but you can easily activate MySQL or Postgr
 
 ### Development tools
 
-- django-types
+- django-stubs
 - django-test-plus
 - model-bakery
 - pytest incl. pytest-cov, pytest-django and pytest-mock
@@ -47,6 +46,9 @@ django-admin startproject \
 # Setup environment
 cd example_project
 echo "DEBUG=true" >> .env
+
+# Optional: If Python 3.12 is not your default version for python3.
+poetry env use python3.12
 
 # Install dependencies
 poetry install

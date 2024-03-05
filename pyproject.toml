@@ -10,24 +10,23 @@ python = "^3.12"
 django = { extras = ["argon2"], version = "^5.0" }
 django-browser-reload = "^1.12.1"
 django-htmx = "^1.17.2"
-pytz = "^2023.3"
+pytz = "^2024.1"
 whitenoise = { extras = ["brotli"], version = "^6.6.0" }
 django-tailwind-cli = { extras = ["django-extensions"], version = "^2.7.2" }
 gunicorn = "^21.2.0"
 environs = { extras = ["django"], version = "^10.0.0" }
-django-dirtyfields = "^1.9.2"
 heroicons = "^2.6.0"
 
 [tool.poetry.group.dev.dependencies]
-django-types = "^0.19.1"
 ipdb = "^0.13.13"
 model-bakery = "^1.17.0"
 pre-commit = "^3.6.0"
 django-test-plus = "^2.2.3"
-pytest = "^7.4.3"
+pytest = "^8.0.2"
 pytest-django = "^4.7.0"
 pytest-cov = "^4.1.0"
 pytest-mock = "^3.12.0"
+django-stubs = { extras = ["compatible-mypy"], version = "^4.2.7" }
 
 [build-system]
 requires = ["poetry-core"]
@@ -38,10 +37,15 @@ target-version = ["py312"]
 line-length = 120
 skip-string-normalization = true
 
-[tool.pyright]
-venvPath = "."
-venv = ".venv"
-typeCheckingMode = "basic"
+[tool.mypy]
+python_version = "3.12"
+strict = false
+namespace_packages = false
+warn_unreachable = true
+plugins = ["mypy_django_plugin.main"]
+
+[tool.django-stubs]
+django_settings_module = "{{ project_name }}.settings"
 
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "{{ project_name }}.settings"
