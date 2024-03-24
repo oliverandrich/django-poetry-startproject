@@ -17,6 +17,7 @@ Out of the box SQLite is configured, but you can easily activate MySQL or Postgr
 - django-browser-reload
 - django-htmx
 - django-tailwind-cli
+- django-typer
 - environs\[django\]
 - heroicons
 - whitenoise
@@ -28,7 +29,7 @@ Out of the box SQLite is configured, but you can easily activate MySQL or Postgr
 
 ### Development tools
 
-- django-stubs
+- django-types
 - django-test-plus
 - model-bakery
 - pytest incl. pytest-cov, pytest-django and pytest-mock

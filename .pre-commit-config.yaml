@@ -2,15 +2,6 @@ default_language_version:
   python: python3.12
 
 repos:
-  - repo: local
-    hooks:
-      - id: mypy
-        name: mypy local
-        entry: poetry run mypy
-        require_serial: true
-        language: system
-        types: [python]
-
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.5.0
     hooks:
@@ -28,6 +19,11 @@ repos:
     rev: 24.2.0
     hooks:
       - id: black
+
+  - repo: https://github.com/RobertCraigie/pyright-python
+    rev: v1.1.302
+    hooks:
+      - id: pyright
 
   - repo: https://github.com/charliermarsh/ruff-pre-commit
     rev: "v0.3.0"
@@ -51,8 +47,3 @@ repos:
       - id: djhtml
         args:
           - --tabwidth=4
-
-  - repo: https://github.com/thibaudcolas/curlylint
-    rev: "v0.13.1"
-    hooks:
-      - id: curlylint
