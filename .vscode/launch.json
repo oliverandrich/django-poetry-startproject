@@ -3,7 +3,7 @@
   "configurations": [
     {
       "name": "Python: Django",
-      "type": "debugpy",
+      "type": "python",
       "request": "launch",
       "program": "${workspaceFolder}/manage.py",
       "args": ["tailwind", "runserver_plus"],
