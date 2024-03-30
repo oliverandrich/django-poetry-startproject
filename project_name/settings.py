@@ -198,5 +198,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 TAILWIND_CLI_PATH = env.str("TAILWIND_CLI_PATH", default="~/.local/bin")
 
 # Our settings
-ADMIN_URL = env.str("ADMIN_URL", default="admin")
+ADMIN_URL = env.str("ADMIN_URL", default="admin/")
 SITE_ID = 1
